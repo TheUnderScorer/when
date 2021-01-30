@@ -1,0 +1,12 @@
+# Module related files
+node_modules
+build
+
+# IDE related files
+.idea
+
+# NPM stuff
+.npmrc
+
+# Coverage
+coverage

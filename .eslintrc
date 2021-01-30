@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "env": {
+    "jest": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "chrome": "readonly"
+  },
+  "plugins": ["jest", "unicorn"],
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "class-methods-use-this": "off",
+    "import/extensions": "off",
+    "import/no-cycle": "off",
+    "import/named": "off",
+    "valid-jsdoc": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "capitalized-comments": "off",
+    "@typescript-eslint/member-naming": "off",
+    "new-cap": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/switch-exhaustiveness-check": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "no-unused-vars": "off"
+  }
+}
