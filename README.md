@@ -88,7 +88,7 @@ const nextState = when(task.state, {
 
 In addition to handling simple dictionaries, "when" also lets you handle more complex cases.
 
-> Hint: Every operator is also provided as helper function,
+> Hint: Every operator is also provided as helper function.
 
 ### In array
 

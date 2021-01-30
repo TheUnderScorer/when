@@ -1,9 +1,16 @@
 {
+  "private": false,
+  "license": "MIT",
   "name": "@theunderscorer/when",
   "version": "1.0.0",
   "author": "Przemysław Żydek <przemyslawzydek@gmail.com>",
   "typings": "build/index.d.ts",
   "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheUnderScorer/when.git"
+  },
+  "homepage": "https://github.com/TheUnderScorer/when#readme",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "test": "jest --config jest.config.js --runInBand",
