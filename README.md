@@ -263,3 +263,7 @@ when(unknownValue, {
   // And so on...
 });
 ```
+
+### License
+
+This library is under MIT license.
