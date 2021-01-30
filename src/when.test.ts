@@ -41,6 +41,17 @@ describe('When', () => {
     expect(result).toEqual('PASSED');
   });
 
+  it('should call else branch if no match was found', () => {
+    const fn = jest.fn();
+
+    when('test', {
+      'no-match': false,
+      [elseBranch]: fn,
+    });
+
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
+
   it('should handle async function', async () => {
     const result = await when('test', {
       test: async () => 'PASSED',
