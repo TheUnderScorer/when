@@ -8,11 +8,11 @@
 const task = await getTask(taskId);
 
 if (task.state === 'TODO') {
-  doStuff(task);
+  handleTodo(task);
 } else if (task.state === 'IN_PROGRESS') {
-  doOtherStuff(task);
+  handleInProgress(task);
 } else if (task.state === 'DONE') {
-  doYetAnotherStuff(task);
+  handleDone(task);
 } else {
   throw new Error('Invalid task state.');
 }
@@ -22,9 +22,9 @@ This could be improved by using `switch` or dictionary. Let's focus on second ap
 
 ```javascript
 const stateHandlers = {
-  TODO: () => doStuff(task),
-  IN_PROGRESS: () => doOtherStuff(task),
-  DONE: () => doYetAnotherStuff(task),
+  TODO: () => handleTodo(task),
+  IN_PROGRESS: () => handleInProgress(task),
+  DONE: () => handleDone(task),
 };
 
 const task = await getTask(taskId);
@@ -266,4 +266,4 @@ when(unknownValue, {
 
 ### License
 
-This library is under MIT license.
+This library is under [MIT License](LICENSE.md).
