@@ -1,5 +1,5 @@
 import type { WhenLookup, WhenLookupKeys } from './types';
-import { elseSymbol } from './symbols';
+import { elseBranch } from './symbols';
 import { createOperatorHandlers } from './operators/operatorHandlers';
 
 export const parseKeys = <T extends WhenLookup>(value: any, lookup: T) => {
@@ -13,11 +13,11 @@ export const parseKeys = <T extends WhenLookup>(value: any, lookup: T) => {
     return result[1];
   }
 
-  return lookup[elseSymbol as any];
+  return lookup[elseBranch as any];
 };
 
 const parseKey = (key: WhenLookupKeys, value: any): boolean => {
-  if (key === elseSymbol) {
+  if (key === elseBranch) {
     return false;
   }
 

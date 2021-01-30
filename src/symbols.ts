@@ -1,1 +1,1 @@
-export const elseSymbol: symbol = Symbol('else');
+export const elseBranch: symbol = Symbol('else');

@@ -1,19 +1,22 @@
-import { WhenLookup } from './types';
+import { WhenLookup, WhenResult } from './types';
 import { parseKeys } from './parseKeys';
 
-export const when = <Value, TLookup extends WhenLookup<Value> = WhenLookup>(
+export const when = <
+  TLookup extends WhenLookup = WhenLookup,
+  Key extends keyof TLookup = keyof TLookup
+>(
   value: any,
   lookup: TLookup
-): Value | undefined => {
+): WhenResult<TLookup[Key]> | undefined => {
   if (lookup[value]) {
-    return handleResult(lookup[value] as any);
+    const result = lookup[value];
+
+    return handleResult(result);
   }
 
   return handleResult(parseKeys(value, lookup));
 };
 
-const handleResult = <T>(
-  value?: T
-): T extends () => infer ReturnValue ? ReturnValue : T => {
+const handleResult = <T>(value?: T): WhenResult<T> => {
   return typeof value === 'function' ? value() : value;
 };

@@ -5,10 +5,10 @@ export const inRange = (from: number, to: number) => `in ${from}..${to}`;
 export const notInRange = (from: number, to: number) =>
   `${negationChar}${inRange(from, to)}`;
 
-export const inArray = (values: Array<string | number>) => values.join(', ');
+export const inArray = (...values: Array<string | number>) => values.join(', ');
 
-export const notInArray = (values: Array<string | number>) =>
-  `${negationChar}${inArray(values)}`;
+export const notInArray = (...values: Array<string | number>) =>
+  `${negationChar} ${inArray(...values)}`;
 
 type IsType =
   | 'string'
